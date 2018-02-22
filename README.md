@@ -34,4 +34,4 @@ function fetchMore(id) {
 }
 ```
 
-`reduxThunkContextMiddleware` takes one argument, a function that creates a context object for a call stack to use. Note that it adds a `_contextObject: true` property to the object to identify it as a context object.
+`reduxThunkContextMiddleware` takes one argument, a function that creates a context object for a call stack to use. Note, that it adds a `_contextObject: true` property to the object to identify it as a context object.
