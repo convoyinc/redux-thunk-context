@@ -1,5 +1,5 @@
 import * as chai from 'chai';
-import { Dispatch } from 'redux';
+import { Dispatch, AnyAction } from 'redux';
 import { reduxThunkContextMiddleware } from '../../src/index';
 
 interface State {
@@ -31,10 +31,12 @@ describe('thunk middleware', () => {
       it('must run the given action function with dispatch and getState', done => {
         const actionHandler = nextHandler(() => 5);
 
-        actionHandler((dispatch: Dispatch<State>, getState: () => State) => {
-          chai.assert.strictEqual(getState, doGetState);
-          done();
-        });
+        actionHandler(
+          (dispatch: Dispatch<AnyAction>, getState: () => State) => {
+            chai.assert.strictEqual(getState, doGetState);
+            done();
+          },
+        );
       });
 
       it('must pass action to next if not a function', done => {

@@ -11,6 +11,10 @@ const middleware: Middleware = reduxThunkContextMiddleware(() => ({ x: 1 }));
 if (middleware) {
 }
 
+interface State {
+  foo: string;
+}
+
 const store: Store<{ foo: string }> = createStore(
   () => ({ foo: 'hi' }),
   { foo: 'yo' },
@@ -21,7 +25,7 @@ store.dispatch((dispatch: Dispatch<any>) => {
   dispatch({ type: 'FOO' });
 });
 
-store.dispatch((dispatch, getState) => {
+store.dispatch((dispatch, getState: () => State) => {
   const state = getState();
 
   const foo: string = state.foo;
