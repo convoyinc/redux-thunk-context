@@ -11,8 +11,8 @@ export interface ThunkContextDispatch<S> {
 }
 
 declare module 'redux' {
-  export interface Dispatch<S, A extends Action = AnyAction> {
-    <R, C>(action: ThunkContextAction<R, S, C>): R;
+  export interface Dispatch<A extends Action = AnyAction> {
+    <R, S, C>(action: ThunkContextAction<R, S, C>): R;
   }
 }
 
