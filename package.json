@@ -3,7 +3,11 @@
   "version": "1.0.0",
   "description": "Thunk middleware for Redux with context object",
   "license": "Apache-2.0",
-  "files": ["*.md", "src/**.js", "src/**.d.ts"],
+  "files": [
+    "*.md",
+    "src/**.js",
+    "src/**.d.ts"
+  ],
   "main": "./src/index.js",
   "typings": "./src/index.d.ts",
   "repository": "convoyinc/redux-thunk-context",
