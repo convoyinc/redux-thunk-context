@@ -1,6 +1,6 @@
 {
   "name": "redux-thunk-context",
-  "version": "1.0.0",
+  "version": "1.0.12",
   "description": "Thunk middleware for Redux with context object",
   "license": "Apache-2.0",
   "files": [
